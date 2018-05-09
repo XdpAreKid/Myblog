@@ -12,15 +12,6 @@
         <section class="site-overview sidebar-panel {% if not display_toc %} sidebar-panel-active {% endif %}">
 
 
-            {% if theme.rss %}
-            <div class="feed-link motion-element">
-                <a href="{{theme.rss }}" rel="alternate">
-                    <i class="fa fa-rss"></i>
-                    RSS
-                </a>
-            </div>
-            {% endif %}
-
             <div class="links-of-author motion-element">
                 {% for name, value in theme.social.items %}
                 <span class="links-of-author-item">

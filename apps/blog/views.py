@@ -192,7 +192,7 @@ class LatestPosts(Feed):
     """
     from django.utils.feedgenerator import Atom1Feed
     feed_type = Atom1Feed
-    title = "foofish 的笔录"
+    title = "Xdp 的笔录"
     link = "/"
 
     def items(self):

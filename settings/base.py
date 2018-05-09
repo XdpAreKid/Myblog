@@ -6,7 +6,7 @@ from collections import OrderedDict
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = ''
-DEBUG = True
+DEBUG = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'collectstatic')
@@ -28,7 +28,6 @@ TEMPLATES = [
     },
 ]
 
-ALLOWED_HOSTS = ["foofish.net"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -96,9 +95,9 @@ SIMPLEMDE_OPTIONS = {
 # ---------------------------------------------------------------
 # 主题配置
 # ---------------------------------------------------------------
-SITE_TITLE = "FooFish's Notes"
-SITE_SUBTITLE = u"不一样的烟火"
-KEYWORDS = "FooFish, Python"
+SITE_TITLE = "Xdp's Notes"
+SITE_SUBTITLE = u"一样的世界，不一样的眼光"
+KEYWORDS = "DeepLearning, Python"
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -107,18 +106,16 @@ MENU = OrderedDict(sorted({"home": {"label": u"首页", "path": "/", "icon": "ho
                            "categories": {"label": u"分类", "path": "/categories", "icon": "th", "position": 3},
                            "archives": {"label": u"归档", "path": "/archives", "icon": "archive", "position": 2},
                            "tags": {"label": u"标签", "path": "/tags", "icon": "tags", "position": 4},
-                           "about": {"label": u"关于", "path": "/about", "icon": "user", "position": 5}, }.items(),
+                           "about": {"label": u"关于", "path": "/about", "icon": "user", "position": 5},
+                           }.items(),
                           key=lambda t: t[1]['position']))
 
 SCHEME = "Pisces"
 
 SOCIAL = OrderedDict(
-    sorted({"GitHub": {"label": u"GitHub", "link": "https://github.com/lzjun567", "social_icons": "github",
+    sorted({"GitHub": {"label": u"GitHub", "link": "https://github.com/XdpAreKid", "social_icons": "github",
                        "position": 1},
-            "Twitter": {"label": u"Twitter", "link": "https://twitter.com/lzjun1", "social_icons": "twitter",
-                        "position": 2},
-            "Weibo": {"label": u"微博", "link": "http://weibo.com/lzjun567 ", "social_icons": "weibo", "position": 3},
-            "Zhihu": {"label": u"知乎", "link": "https://www.zhihu.com/people/zhijun-liu", "social_icons": "",
+            "Zhihu": {"label": u"知乎", "link": "https://www.zhihu.com/people/xu-mao-74", "social_icons": "",
                       "position": 5},
 
             }.items(), key=lambda t: t[1]['position']))
@@ -127,7 +124,6 @@ SIDEBAR = {"position": "left",
            "display": "post"
            }
 
-DUOSHUO_SHORTNAME = "foofish"
 GOOGLE_SITE_VERIFICATION = "your google site verification"
 GOOGLE_ANALYTICS = "you google analytics id"
 USE_MOTION = True
