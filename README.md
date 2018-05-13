@@ -1,6 +1,6 @@
 关于Django_Blog
 =====================
-##Based on:[github.com](github.com)
+##Based on:[django_blog](https://github.com/lzjun567/django_blog)
 ##demo:[xdp.space](http://xdp.space)
 
 ####我的运行环境
@@ -28,8 +28,8 @@ Python版本使用3.4，首先确保系统有Python3的环境。还没安装的�
     (django_blog) $ git clone https://github.com/lzjun567/django_blog.git
     (django_blog) $ cd django_blog
     (django_blog) $ pip install -r requirements/dev.txt
-    (django_blog) $ python manage.py syncdb
-    (django_blog) $ python manage.py migrate apps.blog
+    (django_blog) $ python manage.py makemigration
+    (django_blog) $ python manage.py migrate
     (django_blog) $ python manage.py runserver localhost:8000
 
 ####预览效果 
