@@ -11,11 +11,8 @@ DATABASES = {
 
 # INSTALLED_APPS += ["debug_toolbar", ]
 
-ALLOWED_HOSTS = ['localhost', ]
+ALLOWED_HOSTS = ['*', ]
 
-MIDDLEWARE_CLASSES += (
-    'middleware.profile.ProfilerMiddleware',
-)
 
 PAGE_SIZE = 2
 

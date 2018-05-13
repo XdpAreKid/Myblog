@@ -1,7 +1,7 @@
 #!encoding=utf-8
 from django.contrib.sitemaps import Sitemap
 from apps.blog.models import Blog
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 class BlogSitemap(Sitemap):

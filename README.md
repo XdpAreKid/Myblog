@@ -1,7 +1,7 @@
 关于Django_Blog
 =====================
 ##Based on:[github.com](github.com)
-##demo:[xdp.space](xdp.space)
+##demo:[xdp.space](http://xdp.space)
 
 ####我的运行环境
 在树莓派上部署的blog,通过[frp](github.com/frp)映射到我的公网ip上。
@@ -35,13 +35,12 @@ Python版本使用3.4，首先确保系统有Python3的环境。还没安装的�
 ####预览效果 
 ![预览效果 ][1]
 
-管理登录地址：[http://localhost:8000/admin](http://localhost:8000/admin)，用户名:admin   密码:123456  生产环境部署请参考[Django应用部署](http://foofish.net/blog/18/django-deploy)
 
 ####开发文档
 [develop.md](./doc/develop.md)
 
 ####TODO
-- [ ] 1.更新到django2.0
+- [x] 1.更新到django2.0
 - [ ] 2.支持Markdown编写博文
 - [ ] 3.引入Xadmin管理后端
 - [ ] 4.编写评论系统

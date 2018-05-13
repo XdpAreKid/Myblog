@@ -5,10 +5,11 @@ import re
 
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
-from django.core import urlresolvers
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.template.defaultfilters import slugify
+
+from markdownx.models import MarkdownxField
 
 
 class BlogQuerySet(models.QuerySet):
@@ -48,7 +49,7 @@ class Blog(models.Model):
     link.help_text = "Cool URIs don't change"
     cover = models.URLField('封面', default='', blank=True)
     snippet = models.CharField('摘要', max_length=500, default='')
-    content = models.TextField('内容', )
+    content = MarkdownxField('内容', )
 
     add_time = models.DateTimeField('创建时间', auto_now_add=True)
     publish_time = models.DateTimeField('发表时间', null=True)
@@ -58,10 +59,10 @@ class Blog(models.Model):
     is_public = models.BooleanField('公开', default=True)
     is_top = models.BooleanField('置顶', default=False)
     access_count = models.IntegerField('浏览量', default=1, editable=False)
-    category = models.ForeignKey('Category', verbose_name='所属分类')
+    category = models.ForeignKey('Category', verbose_name='所属分类', on_delete=models.CASCADE)
     tags = models.ManyToManyField('Tag', verbose_name='标签集合', null=True, blank=True)
     tags.help_text = '标签'
-    author = models.ForeignKey(User, verbose_name='作者')
+    author = models.ForeignKey(User, verbose_name='作者', on_delete=models.CASCADE)
     objects = BlogManager()
 
     class Meta:
@@ -84,7 +85,7 @@ class Blog(models.Model):
 
     def get_admin_url(self):
         content_type = ContentType.objects.get_for_model(self.__class__)
-        return urlresolvers.reverse("admin:%s_%s_change" % (content_type.app_label, content_type.model),
+        return reverse("admin:%s_%s_change" % (content_type.app_label, content_type.model),
                                     args=(self.id,))
 
 

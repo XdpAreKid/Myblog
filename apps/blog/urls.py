@@ -11,6 +11,8 @@ from .views import BlogsWithTagView
 from .views import CategoriesView
 from .views import TagsView
 
+app_name = 'blog'
+
 urlpatterns = [url(r"^tag/(?P<tag_name>[\w,-]+)$", BlogsWithTagView.as_view(), name="tag"),
                url(r"^category/(?P<pk>\d+)/(?P<cat_name>\w+)$", BlogsWithCategoryView.as_view(), name="category"),
                url(r"^tags$", TagsView.as_view(), name="tag_list"),
