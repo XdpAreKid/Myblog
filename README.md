@@ -25,8 +25,8 @@ Python版本使用3.4，首先确保系统有Python3的环境。还没安装的�
 下载安装第三方依赖包：  
     
     (django_blog) $ cd /home/${user}/workspace #你可以把project下载到任意你想放的地方
-    (django_blog) $ git clone https://github.com/lzjun567/django_blog.git
-    (django_blog) $ cd django_blog
+    (django_blog) $ git clone https://github.com/XdpAreKid/Myblog.git
+    (django_blog) $ cd Myblog
     (django_blog) $ pip install -r requirements/dev.txt
     (django_blog) $ python manage.py makemigration
     (django_blog) $ python manage.py migrate
@@ -41,12 +41,11 @@ Python版本使用3.4，首先确保系统有Python3的环境。还没安装的�
 
 ####TODO
 - [x] 1.更新到django2.0
-- [ ] 2.支持Markdown编写博文
+- [x] 2.支持Markdown编写博文
 - [ ] 3.引入Xadmin管理后端
 - [ ] 4.编写评论系统
 - [ ] 5.接入PiCenter管理我的树莓派
+- [ ] 6.缩减无用代码
 
 任何建议或者参与开发，可以[New Issue](https://github.com/lzjun567/django_blog/issues)。项目遵循[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)协议  
- 
-  [1]: http://foofish.qiniudn.com/v1.2.png
 

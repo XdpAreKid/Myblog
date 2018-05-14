@@ -8,6 +8,10 @@
 <meta http-equiv="Cache-Control" content="no-transform"/>
 <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
+<link rel="shortcut icon" href="/static/favicon.ico" />
+
+<link rel="bookmark"href="/static/favicon.ico" />
+
 
 {% if theme.google_site_verification %}
 <meta name="google-site-verification" content="{{ theme.google_site_verification }}"/>
@@ -49,11 +53,6 @@
 
 {% if theme.rss %}
 <link rel="alternate" href="/rss" title="FooFish's Notes" type="application/atom+xml"/>
-{% endif %}
-
-
-{% if theme.favicon %}
-<link rel="shortcut icon" href="{% static 'favicon.ico' %}?v={{ theme.version }}" type="image/x-icon">
 {% endif %}
 
 

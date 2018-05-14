@@ -4,7 +4,7 @@ import datetime
 
 from django.contrib import admin
 from django.contrib.admin.templatetags.admin_modify import *
-from django.contrib.admin.templatetags.admin_modify import submit_row as original_submit_row
+from markdownx.admin import MarkdownxModelAdmin
 
 from .models import Tag, Blog, Category, Friend
 from .forms import BlogForm
@@ -46,7 +46,7 @@ def submit_row(context):
     return ctx
 
 
-class BlogAdmin(admin.ModelAdmin):
+class BlogAdmin(MarkdownxModelAdmin):
     list_display = ('title','category', 'is_public', 'status', 'publish', 'access_count')
     fields = (
         'title',
@@ -123,7 +123,8 @@ class FriendAdmin(admin.ModelAdmin):
     list_display = ('title', 'url', 'position', 'active')
 
 
-admin.site.register(Blog, BlogAdmin)
+#admin.site.register(Blog, BlogAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Friend, FriendAdmin)
+admin.site.register(Blog, MarkdownxModelAdmin)
