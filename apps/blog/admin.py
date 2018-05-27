@@ -6,6 +6,7 @@ from django.contrib import admin
 from django.contrib.admin.templatetags.admin_modify import *
 from markdownx.admin import MarkdownxModelAdmin
 
+
 from .models import Tag, Blog, Category, Friend
 from .forms import BlogForm
 

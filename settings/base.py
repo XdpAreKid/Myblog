@@ -45,7 +45,8 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-MIDDLEWARE = [ 'django.contrib.sessions.middleware.SessionMiddleware',
+MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
