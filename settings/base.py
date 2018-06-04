@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'apps.blog',
     'pagedown',
     'compressor',
-    'markdownx',
 ]
 
 SITE_ID = 1
@@ -76,7 +75,7 @@ DATABASES = {
     }
 }
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 LANGUAGE_CODE = 'zh-hans'
 
@@ -120,6 +119,10 @@ SOCIAL = OrderedDict(
                        "position": 1},
             "Zhihu": {"label": u"知乎", "link": "https://www.zhihu.com/people/xu-mao-74", "social_icons": "",
                       "position": 5},
+            "Glances": {"label": u"glances", "link": "http://glances.xdp.com", "social_icons": "area-chart",
+                                  "position": 2},
+            "jupyter": {"label": u"jupyter", "link": "http://jupyter.xdp.com", "social_icons": "list-alt",
+                                  "position": 3},
 
             }.items(), key=lambda t: t[1]['position']))
 

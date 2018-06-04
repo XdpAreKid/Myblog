@@ -42,8 +42,10 @@ Python版本使用3.4，首先确保系统有Python3的环境。还没安装的�
 ####TODO
 - [x] 1.更新到django2.0
 - [x] 2.支持Markdown编写博文
+
 ~~- [ ] 3.引入Xadmin管理后端~~
 - [ ] 4.编写评论系统
+
 ~~- [ ] 5.接入PiCenter管理我的树莓派~~
 - [x] 5.glances接入
 - [x] 6.jupyter远程接入

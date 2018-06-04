@@ -27,7 +27,6 @@ urlpatterns = [
     url(r'^blog/', include('apps.blog.urls', namespace='blog')),
     url(r'^about$', AboutView.as_view(), name='about'),
     url(r'^404', TemplateView.as_view(template_name="404.html")),
-    url(r'^markdownx/', include('markdownx.urls')),
 
 
     url(r"^tag/(?P<tag_name>[\w,-]+)$", BlogsWithTagView.as_view(), name="tag"),

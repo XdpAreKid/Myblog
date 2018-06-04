@@ -124,8 +124,7 @@ class FriendAdmin(admin.ModelAdmin):
     list_display = ('title', 'url', 'position', 'active')
 
 
-#admin.site.register(Blog, BlogAdmin)
+admin.site.register(Blog, BlogAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Friend, FriendAdmin)
-admin.site.register(Blog, MarkdownxModelAdmin)
