@@ -50,6 +50,7 @@ Python版本使用3.4，首先确保系统有Python3的环境。还没安装的�
 - [x] 5.glances接入
 - [x] 6.jupyter远程接入
 - [ ] 7.缩减无用代码
+- [ ] 8.增加搜索功能
 
 任何建议或者参与开发，可以[New Issue](https://github.com/lzjun567/django_blog/issues)。项目遵循[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)协议  
 
