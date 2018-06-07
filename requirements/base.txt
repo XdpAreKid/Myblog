@@ -3,5 +3,4 @@ mistune
 pygments
 django-reversion
 django-compressor
-django-pagedown
-django-markdownx
+django-simditor

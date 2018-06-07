@@ -7,11 +7,7 @@ from django.forms import CharField
 from django.forms import Textarea
 
 
-from pagedown.widgets import AdminPagedownWidget
-
-
 class BlogForm(ModelForm):
-    content = CharField(label='内容', widget=AdminPagedownWidget())
     snippet = CharField(label='摘要',
                         widget=Textarea(attrs={'cols': 85, 'rows': 7}),
                         required=False)

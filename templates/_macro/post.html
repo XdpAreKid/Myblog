@@ -61,7 +61,7 @@
 
     <div class="post-body" itemprop="articleBody">
         {% if is_index %}
-        {{post.content|slice:"0:300" | md1}}
+        {{post.content|slice:"0:200" | md1}}
 
         <div class="post-more-link text-center">
             <a class="btn" href="{{post.get_absolute_url}}" rel="contents">
@@ -81,9 +81,9 @@
     </div>
 
     <div>
-      {% if not is_index %}
-        {% include '_macro/reward.html' %}
-      {% endif %}
+        {% if not is_index %}
+            {% include '_macro/reward.html' %}
+        {% endif %}
     </div>
 
     <footer class="post-footer">

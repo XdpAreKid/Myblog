@@ -1,5 +1,5 @@
 {% extends '_layout.html' %}
-
+{% load static %}
 
 {% block title %} {{ page.title }} {% endblock %}
 
@@ -12,20 +12,10 @@
 
     {% include '_macro/post.html' with blog=blog%}
 
-    <div class="post-spread">
-    <!-- JiaThis Button BEGIN -->
-    <div class="jiathis_style">
-        <a class="jiathis_button_qzone"></a>
-        <a class="jiathis_button_tsina"></a>
-        <a class="jiathis_button_weixin"></a>
-        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-        <a class="jiathis_counter_style"></a>
-    </div>
-    <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
-    <!-- JiaThis Button END -->
+
   </div>
   <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTM5OC8xMTkzNA==">
+<!--  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTM5OC8xMTkzNA==">
 	<script type="text/javascript">
    (function(d, s) {
        var j, e = d.getElementsByTagName(s)[0];
@@ -40,8 +30,41 @@
    })(document, 'script');
 	</script>
 <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
+</div>  -->
+
+
 <!-- City版安装代码已完成 -->
+{% load i18n %}
+    <link href="{% static 'django_comments_xtd/css/bootstrap.min.css' %}" rel="stylesheet">
+{% load comments %}
+<div id="comments">
+  {% get_comment_count for object as comment_count %}
+  {% if comment_count %}
+  <H5 class="text-center">
+    {% blocktrans count comment_count=comment_count %}
+    There is {{ comment_count }} comment below.
+    {% plural %}
+    There are {{ comment_count }} comments below.
+    {% endblocktrans %}
+  </H5>
+  <hr/>
+  {% endif %}
+
+  <div class="comment">
+    <h4 class="text-center">Post your comment</h4>
+    <div class="well">
+      {% render_comment_form for object %}
+    </div>
+  </div>
+
+  {% if comment_count %}
+  <hr/>
+  <div id="comment-list">
+    {% render_comment_list for object %}
+  </div>
+  {% endif %}
+</div>
+
 {% endblock %}
 
 

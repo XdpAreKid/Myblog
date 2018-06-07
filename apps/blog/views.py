@@ -9,6 +9,8 @@ from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
+from django.urls import reverse
+
 from .libs.tag_cloud import TagCloud
 from .models import Blog, Tag, Category
 
@@ -183,6 +185,7 @@ class BlogDetailView(DetailView):
 
         context['next_post'] = next_post
         context['prev_post'] = prev_post
+        context.update({'next': reverse('comments-xtd-sent')})
         return context
 
 

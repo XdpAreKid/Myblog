@@ -8,9 +8,9 @@
 <meta http-equiv="Cache-Control" content="no-transform"/>
 <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-<link rel="shortcut icon" href="/static/favicon.ico" />
+<link rel="shortcut icon" href={% static 'favicon.ico' %}/>
 
-<link rel="bookmark"href="/static/favicon.ico" />
+<link rel="bookmark"href={% static 'favicon.ico' %}/>
 
 
 {% if theme.google_site_verification %}
@@ -37,7 +37,8 @@
 {% include "_partials/head/external-fonts.html" %}
 
 
-<link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"/>
+{# <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"/> #}
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 <link href="{% static 'css/main.css'%}?v={{ theme.version }}" rel="stylesheet" type="text/css"/>
 
 

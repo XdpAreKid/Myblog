@@ -8,8 +8,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
 from django.db import models
 from django.template.defaultfilters import slugify
-
-from markdownx.models import MarkdownxField
+from simditor.fields import RichTextField
 
 
 class BlogQuerySet(models.QuerySet):
@@ -49,7 +48,7 @@ class Blog(models.Model):
     link.help_text = "Cool URIs don't change"
     cover = models.URLField('封面', default='', blank=True)
     snippet = models.CharField('摘要', max_length=500, default='')
-    content = MarkdownxField('内容', )
+    content = RichTextField('内容')
 
     add_time = models.DateTimeField('创建时间', auto_now_add=True)
     publish_time = models.DateTimeField('发表时间', null=True)
@@ -87,6 +86,7 @@ class Blog(models.Model):
         content_type = ContentType.objects.get_for_model(self.__class__)
         return reverse("admin:%s_%s_change" % (content_type.app_label, content_type.model),
                                     args=(self.id,))
+
 
 
 class Category(models.Model):

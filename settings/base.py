@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'apps.blog',
-    'pagedown',
+    'simditor',
     'compressor',
-    'markdownx',
+    'django_comments_xtd',
+    'django_comments',
 ]
 
 SITE_ID = 1
@@ -54,11 +55,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
+COMMENTS_APP='django_comments_xtd'
+COMMENTS_XTD_MAX_THREAD_LEVEL = 2
+COMMENTS_XTD_CONFIRM_EMAIL=False
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -69,14 +73,18 @@ ROOT_URLCONF = 'urls'
 
 WSGI_APPLICATION = 'wsgi.application'
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 LANGUAGE_CODE = 'zh-hans'
 
@@ -92,6 +100,28 @@ SIMPLEMDE_OPTIONS = {
     'status': False,
     'autosave': {
         'enabled': True
+    }
+}
+
+
+SIMDITOR_UPLOAD_PATH = 'uploads/'
+SIMDITOR_IMAGE_BACKEND = 'pillow'
+
+SIMDITOR_TOOLBAR = [
+    'title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale',
+    'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link',
+    'image', 'hr', '|', 'indent', 'outdent', 'alignment', 'fullscreen',
+    'markdown', 'emoji'
+]
+
+SIMDITOR_CONFIGS = {
+    'toolbar': SIMDITOR_TOOLBAR,
+    'upload': {
+        'url': '/simditor/upload/',
+        'fileKey': 'upload'
+    },
+    'emoji': {
+        'imagePath': '/static/simditor/images/emoji/'
     }
 }
 
@@ -120,6 +150,10 @@ SOCIAL = OrderedDict(
                        "position": 1},
             "Zhihu": {"label": u"知乎", "link": "https://www.zhihu.com/people/xu-mao-74", "social_icons": "",
                       "position": 5},
+            "Glances": {"label": u"glances", "link": "http://glances.xdp.space", "social_icons": "area-chart",
+                                  "position": 2},
+            "jupyter": {"label": u"jupyter", "link": "http://jupyter.xdp.space", "social_icons": "list-alt",
+                                  "position": 3},
 
             }.items(), key=lambda t: t[1]['position']))
 
@@ -134,6 +168,6 @@ USE_MOTION = True
 FANCYBOX = True
 RSS = '/rss'
 VERSION = '5.0.1'
-ALIPAY = ""
-WECHATPAY = ""
+ALIPAY = STATIC_URL+"pay/alipay.jpg"
+WECHATPAY = STATIC_URL+"pay/wechat_pay.jpg"
 

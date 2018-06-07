@@ -23,12 +23,13 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
     url(r'^$', BlogListView.as_view(), name="home"),
     url(r'^blog/', include('apps.blog.urls', namespace='blog')),
     url(r'^about$', AboutView.as_view(), name='about'),
     url(r'^404', TemplateView.as_view(template_name="404.html")),
-    url(r'^markdownx/', include('markdownx.urls')),
-
+    url(r'^simditor/', include('simditor.urls')),
+    url(r'^comments/', include('django_comments_xtd.urls')),
 
     url(r"^tag/(?P<tag_name>[\w,-]+)$", BlogsWithTagView.as_view(), name="tag"),
     url(r"^category/(?P<pk>\d+)/(?P<cat_name>\w+)$", BlogsWithCategoryView.as_view()),
